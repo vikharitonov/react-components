@@ -36,7 +36,7 @@ export default {
 const BasicTemplate: ComponentStory<typeof ButtonGroup> = (args) => {
   return (
     <ButtonGroup {...args}>
-      {['One', 'Two', 'Three'].map((i) => {
+      {["One", "Two", "Three"].map((i) => {
         return <Button label={`${i}`} />;
       })}
     </ButtonGroup>
@@ -46,6 +46,12 @@ const BasicTemplate: ComponentStory<typeof ButtonGroup> = (args) => {
 export const Basic = BasicTemplate.bind({});
 Basic.args = {
   groupType: "light",
+};
+
+export const Column = BasicTemplate.bind({});
+Column.args = {
+  groupType: "light",
+  groupDirection: "column",
 };
 
 const PaginattionTemplate: ComponentStory<typeof ButtonGroup> = (args) => {
@@ -61,5 +67,5 @@ const PaginattionTemplate: ComponentStory<typeof ButtonGroup> = (args) => {
 export const Pagination = PaginattionTemplate.bind({});
 Pagination.args = {
   groupType: "accent",
-  groupSize:'sm'
+  groupSize: "sm",
 };

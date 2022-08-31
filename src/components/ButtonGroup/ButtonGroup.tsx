@@ -7,22 +7,25 @@ import {
 
 import { v4 as uuidv4 } from "uuid";
 
-import './ButtonGroup.css'
+import "./ButtonGroup.css";
 
 export interface ButtonGroupInterface extends ComponentPropsWithRef<"div"> {
   groupSize?: ButtonSizeType;
   groupType?: ButtonTypeType;
+  groupDirection?: "row" | "column";
   children: React.ReactElement<ButtonInterface>[];
 }
 
 const ButtonGroup = ({
   groupSize = "md",
   groupType = "light",
+  groupDirection = "row",
   children = [],
   ...props
 }: ButtonGroupInterface) => {
+  const className = `btn-group ${groupDirection}`;
   return (
-    <div className="btn-group" {...props}>
+    <div className={className} {...props}>
       {children &&
         children.map((c) => {
           // @ts-ignore
