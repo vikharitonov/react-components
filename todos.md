@@ -1,5 +1,5 @@
 - [ ] TODO:Add card component
-- [x] TODO:Add input type text component
+- [ ] TODO:Add input type text component
 - [ ] TODO:Add input type radio component
 - [ ] TODO:Add input type checkbox component
 - [ ] TODO:Add input type number component
