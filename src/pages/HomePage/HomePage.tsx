@@ -67,6 +67,15 @@ const HomePage = () => {
           <Image src={placeholder} alt="Fox placeholder"></Image>
         </div>
       </>
+      <>
+        <TextHeading
+          className="bg-color-dark color-light-0"
+          asTag="h1"
+          thin
+          text="Headeing with subheading"
+        ><small>Sub header</small></TextHeading>
+
+      </>
     </>
   );
 };

@@ -1,4 +1,6 @@
-import React, { ComponentPropsWithRef, CSSProperties } from "react";
+import React, { ComponentPropsWithRef } from "react";
+
+import defaultImage from "../../assets/imgs/plasceholders/placeholder.png";
 
 import "./Image.css";
 
@@ -13,15 +15,17 @@ const Image = ({ size, width, height, ...props }: ImageInterface) => {
   const imgHeight = size ? size : height;
   const className = `img ${props.className ? props.className : null}`;
   const alt = props.alt ? props.alt : `${props.src}`;
+  const src = props.src ? props.src : defaultImage;
 
   return (
     <img
+      {...props}
+      src={src}
       className={className}
       alt={alt}
-      {...props}
       width={imgWidth}
       height={imgHeight}
-      style={{ width: imgWidth, height:imgHeight }}
+      style={{ width: imgWidth, height: imgHeight }}
     />
   );
 };

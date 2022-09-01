@@ -1,18 +1,73 @@
-.h1, h1{
-    font-size: 2.5rem;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  gap: var(--gap-heading);
 }
-.h2, h2{
-    font-size: 2rem;
+
+.h1,
+h1 {
+  font-size: 2.5rem;
 }
-.h3, h3{
-    font-size: 1.75rem;
+.h2,
+h2 {
+  font-size: 2rem;
 }
-.h4, h4 {
-    font-size: 1.5rem;
+.h3,
+h3 {
+  font-size: 1.75rem;
 }
-.h5, h5 {
-    font-size: 1.25rem;
+.h4,
+h4 {
+  font-size: 1.5rem;
 }
-.h6, h6 {
-    font-size: 1rem;
+.h5,
+h5 {
+  font-size: 1.25rem;
+}
+.h6,
+h6 {
+  font-size: 1rem;
+}
+
+.h1 > small,
+h1 > small,
+.h2 > small,
+h2 > small,
+.h3 > small,
+h3 > small,
+.h4 > small,
+h4 > small,
+.h5 > small,
+h5 > small,
+.h6 > small,
+h6 > small {
+  display: inline-block;
+  font-size: var(--smaller-font-size)!important;
+}
+
+.h1.thin,
+h1.thin,
+.h2.thin,
+h2.thin,
+.h3.thin,
+h3.thin,
+.h4.thin,
+h4.thin,
+.h5.thin,
+h5.thin,
+.h6.thin,
+h6.thin {  
+  font-weight: 300;  
 }
