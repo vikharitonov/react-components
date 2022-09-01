@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "../../components/Button/Button";
 import ButtonGroup from "../../components/ButtonGroup/ButtonGroup";
+import { TextHeading } from "../../components/Text";
 
 const HomePage = () => {
   const handleBtnClick = () => {
@@ -9,7 +10,7 @@ const HomePage = () => {
   return (
     <>
       <hr />
-      <h1>Button </h1>
+      <TextHeading className="bg-color-success color-dark" asTag="h1" text="Button"/>
       <Button
         label="My first button"
         btnSize={"lg"}
@@ -17,7 +18,7 @@ const HomePage = () => {
         onClick={handleBtnClick}
       />
       <hr />
-      <h1>Button Group</h1>
+      <TextHeading className="bg-color-success color-dark" asTag="h1" text="Button Group"/>
       <ButtonGroup groupSize={"sm"} groupType="dark">
         <Button
           label="My first button"
@@ -32,8 +33,8 @@ const HomePage = () => {
         />
       </ButtonGroup>
       <ButtonGroup groupSize={"sm"} groupType="dark">
-        {['<',1, 2, 3,'>',].map((i) => {
-          return <Button label={`${i}`} onClick={handleBtnClick} />;
+        {['<',1, 2, 3,'>',].map((i, index) => {
+          return <Button key={'btn'+index} label={`${i}`} onClick={handleBtnClick} />;
         })}
       </ButtonGroup>
     </>
