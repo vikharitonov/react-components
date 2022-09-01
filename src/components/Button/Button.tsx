@@ -1,7 +1,7 @@
 import React, { ComponentPropsWithRef } from "react";
 import "./Button.css";
 
-export type ButtonTypeType =
+export type ButtonStyleType =
   | "primary"
   | "secondary"
   | "success"
@@ -17,21 +17,21 @@ export type ButtonTypeType =
 export type ButtonSizeType = "sm" | "md" | "lg" | null;
 
 export interface ButtonInterface extends ComponentPropsWithRef<"button"> {
-  label?: string;
-  btnType?: ButtonTypeType;
+  btnLabel?: string;
+  btnStyle?: ButtonStyleType;
   btnSize?: ButtonSizeType;
 }
 
 const Button = ({
-  label = "Button",
-  btnType = "light",
+  btnLabel = "Button",
+  btnStyle = "light",
   btnSize = "md",
   ...props
 }: ButtonInterface) => {
-  const className = `btn ${btnType ? btnType : null} ${
+  const className = `btn ${btnStyle ? btnStyle : null} ${
     btnSize ? btnSize : null
   }`;
-  return <button className={className} {...props}>{label}</button>;
+  return <button className={className} {...props}>{btnLabel}</button>;
 };
 
 export default Button;

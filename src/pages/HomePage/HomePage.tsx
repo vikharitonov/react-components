@@ -1,7 +1,9 @@
 import React from "react";
 import Button from "../../components/Button/Button";
 import ButtonGroup from "../../components/ButtonGroup/ButtonGroup";
+import Image from "../../components/Image/Image";
 import { TextHeading } from "../../components/Text";
+import placeholder from "../../assets/imgs/plasceholders/placeholder.webp";
 
 const HomePage = () => {
   const handleBtnClick = () => {
@@ -9,34 +11,62 @@ const HomePage = () => {
   };
   return (
     <>
-      <hr />
-      <TextHeading className="bg-color-success color-dark" asTag="h1" text="Button"/>
-      <Button
-        label="My first button"
-        btnSize={"lg"}
-        btnType="accent"
-        onClick={handleBtnClick}
-      />
-      <hr />
-      <TextHeading className="bg-color-success color-dark" asTag="h1" text="Button Group"/>
-      <ButtonGroup groupSize={"sm"} groupType="dark">
+      <>
+        <TextHeading
+          className="bg-color-dark color-light-0"
+          asTag="h1"
+          text="Button"
+        />
         <Button
-          label="My first button"
+          btnLabel="My first button"
           btnSize={"lg"}
+          btnStyle="accent"
           onClick={handleBtnClick}
         />
-        <Button label="My second button" onClick={handleBtnClick} />
-        <Button
-          label="My third button"
-          btnSize={"lg"}
-          onClick={handleBtnClick}
+      </>
+      <>
+        <TextHeading
+          className="bg-color-dark color-light-0"
+          asTag="h1"
+          text="Button Group"
         />
-      </ButtonGroup>
-      <ButtonGroup groupSize={"sm"} groupType="dark">
-        {['<',1, 2, 3,'>',].map((i, index) => {
-          return <Button key={'btn'+index} label={`${i}`} onClick={handleBtnClick} />;
-        })}
-      </ButtonGroup>
+        <ButtonGroup groupSize={"sm"} groupType="dark">
+          <Button
+            btnLabel="My first button"
+            btnSize={"lg"}
+            onClick={handleBtnClick}
+          />
+          <Button btnLabel="My second button" onClick={handleBtnClick} />
+          <Button
+            btnLabel="My third button"
+            btnSize={"lg"}
+            onClick={handleBtnClick}
+          />
+        </ButtonGroup>
+        <br />
+        <br />
+        <ButtonGroup groupSize={"sm"} groupType="dark">
+          {["<", 1, 2, 3, ">"].map((i, index) => {
+            return (
+              <Button
+                key={"btn" + index}
+                btnLabel={`${i}`}
+                onClick={handleBtnClick}
+              />
+            );
+          })}
+        </ButtonGroup>
+      </>
+      <>
+        <TextHeading
+          className="bg-color-dark color-light-0"
+          asTag="h1"
+          text="Image"
+        />
+        <div style={{ width: 700, height: 400 }}>
+          <Image src={placeholder} alt="Fox placeholder"></Image>
+        </div>
+      </>
     </>
   );
 };

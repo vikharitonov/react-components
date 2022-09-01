@@ -2,7 +2,7 @@ import React, { ComponentPropsWithRef } from "react";
 import {
   ButtonInterface,
   ButtonSizeType,
-  ButtonTypeType,
+  ButtonStyleType,
 } from "../Button/Button";
 
 import { v4 as uuidv4 } from "uuid";
@@ -11,7 +11,7 @@ import "./ButtonGroup.css";
 
 export interface ButtonGroupInterface extends ComponentPropsWithRef<"div"> {
   groupSize?: ButtonSizeType;
-  groupType?: ButtonTypeType;
+  groupType?: ButtonStyleType;
   groupDirection?: "row" | "column";
   children: React.ReactElement<ButtonInterface>[];
 }
@@ -34,7 +34,7 @@ const ButtonGroup = ({
             return React.cloneElement(c, {
               key: uuidv4(),
               btnSize: c.props.btnSize ? c.props.btnSize : groupSize,
-              btnType: c.props.btnType ? c.props.btnType : groupType,
+              btnStyle: c.props.btnStyle ? c.props.btnStyle : groupType,
             });
           }
           return null;

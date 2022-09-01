@@ -37,7 +37,7 @@ const BasicTemplate: ComponentStory<typeof ButtonGroup> = (args) => {
   return (
     <ButtonGroup {...args}>
       {["One", "Two", "Three"].map((i) => {
-        return <Button label={`${i}`} />;
+        return <Button btnLabel={`${i}`} />;
       })}
     </ButtonGroup>
   );
@@ -58,7 +58,7 @@ const PaginattionTemplate: ComponentStory<typeof ButtonGroup> = (args) => {
   return (
     <ButtonGroup {...args}>
       {["<", 1, 2, 3, ">"].map((i) => {
-        return <Button label={`${i}`} />;
+        return <Button btnLabel={`${i}`} />;
       })}
     </ButtonGroup>
   );
