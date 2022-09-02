@@ -1,9 +1,15 @@
-import React from "react";
+import React, { ComponentPropsWithoutRef } from "react";
 import Button from "../../components/Button/Button";
 import ButtonGroup from "../../components/ButtonGroup/ButtonGroup";
 import Image from "../../components/Image/Image";
 import { TextHeading } from "../../components/Text";
 import placeholder from "../../assets/imgs/plasceholders/placeholder.webp";
+import Table from "../../components/Table/Table";
+
+interface WrapperInterface extends ComponentPropsWithoutRef<"div"> {}
+const Wrapper = ({ children }: WrapperInterface) => {
+  return <div style={{ width: "50%", margin: "0 auto" }}>{children}</div>;
+};
 
 const HomePage = () => {
   const handleBtnClick = () => {
@@ -11,25 +17,25 @@ const HomePage = () => {
   };
   return (
     <>
-      <>
-        <TextHeading
-          className="bg-color-dark color-light-0"
-          asTag="h1"
-          text="Button"
-        />
+      <TextHeading
+        className="bg-color-dark color-light-0"
+        asTag="h1"
+        text="Button"
+      />
+      <Wrapper>
         <Button
           btnLabel="My first button"
           btnSize={"lg"}
           btnStyle="accent"
           onClick={handleBtnClick}
         />
-      </>
-      <>
-        <TextHeading
-          className="bg-color-dark color-light-0"
-          asTag="h1"
-          text="Button Group"
-        />
+      </Wrapper>
+      <TextHeading
+        className="bg-color-dark color-light-0"
+        asTag="h1"
+        text="Button Group"
+      />
+      <Wrapper>
         <ButtonGroup groupSize={"sm"} groupType="dark">
           <Button
             btnLabel="My first button"
@@ -56,26 +62,46 @@ const HomePage = () => {
             );
           })}
         </ButtonGroup>
-      </>
-      <>
-        <TextHeading
-          className="bg-color-dark color-light-0"
-          asTag="h1"
-          text="Image"
-        />
-        <div style={{ width: 700, height: 400 }}>
-          <Image src={placeholder} alt="Fox placeholder"></Image>
-        </div>
-      </>
-      <>
-        <TextHeading
-          className="bg-color-dark color-light-0"
-          asTag="h1"
-          thin
-          text="Headeing with subheading"
-        ><small>Sub header</small></TextHeading>
+      </Wrapper>
+      <TextHeading
+        className="bg-color-dark color-light-0"
+        asTag="h1"
+        text="Image"
+      />
+      <Wrapper>
+        <Image src={placeholder} alt="Fox placeholder"></Image>
+      </Wrapper>
+      <TextHeading
+        className="bg-color-dark color-light-0"
+        asTag="h1"
+        thin
+        text="Headeing with subheading"
+      >
+        <small>Sub header</small>
+      </TextHeading>
 
-      </>
+      <TextHeading
+        className="bg-color-dark color-light-0"
+        asTag="h1"
+        text="Table"
+      />
+
+      <Wrapper>
+        <Table
+          height={150}
+          headers={[
+            "Table Header One",
+            "Table Header Two",
+            "Table Header Three",
+          ]}
+          rows={[
+            ["Table Cell Content", "Table Cell Content", "Table Cell Content"],
+            ["Table Cell Content", "Table Cell Content", "Table Cell Content"],
+            ["Table Cell Content", "Table Cell Content", "Table Cell Content"],
+            ["Table Cell Content", "Table Cell Content", "Table Cell Content"],
+          ]}
+        />
+      </Wrapper>
     </>
   );
 };

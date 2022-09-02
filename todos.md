@@ -1,3 +1,4 @@
+- [ ] TODO:Add simple table component
 - [ ] TODO:Add card component
 - [ ] TODO:Add input type text component
 - [ ] TODO:Add input type radio component
