@@ -1,20 +1,35 @@
-import React, { ComponentPropsWithoutRef } from "react";
+import React, { ComponentPropsWithoutRef, useState } from "react";
 import Button from "../../components/Button/Button";
 import ButtonGroup from "../../components/ButtonGroup/ButtonGroup";
 import Image from "../../components/Image/Image";
 import { TextHeading } from "../../components/Text";
 import placeholder from "../../assets/imgs/plasceholders/placeholder.webp";
 import Table from "../../components/Table/Table";
+import FullPageBackground from "../../components/FullPageBackground/FullPageBackground";
+
+const headers = [
+  "Table Header One",
+  "Table Header Two",
+  "Table Header Three",
+];
+const rows = [
+  ["Table Cell Content", "Table Cell Content", "Table Cell Content"],
+  ["Table Cell Content", "Table Cell Content", "Table Cell Content"],
+  ["Table Cell Content", "Table Cell Content", "Table Cell Content"],
+  ["Table Cell Content", "Table Cell Content", "Table Cell Content"],
+]
 
 interface WrapperInterface extends ComponentPropsWithoutRef<"div"> {}
-const Wrapper = ({ children }: WrapperInterface) => {
-  return <div style={{ width: "50%", margin: "0 auto" }}>{children}</div>;
+const Wrapper = ({ children, ...props }: WrapperInterface) => {
+  return <div style={{ width: "50%", margin: "0 auto" }} {...props}>{children}</div>;
 };
 
 const HomePage = () => {
   const handleBtnClick = () => {
     alert(`It's alive!!!`);
   };
+  const [showFPBG, setShowFPBG] = useState(false);
+
   return (
     <>
       <TextHeading
@@ -88,20 +103,28 @@ const HomePage = () => {
 
       <Wrapper>
         <Table
-          height={150}
-          headers={[
-            "Table Header One",
-            "Table Header Two",
-            "Table Header Three",
-          ]}
-          rows={[
-            ["Table Cell Content", "Table Cell Content", "Table Cell Content"],
-            ["Table Cell Content", "Table Cell Content", "Table Cell Content"],
-            ["Table Cell Content", "Table Cell Content", "Table Cell Content"],
-            ["Table Cell Content", "Table Cell Content", "Table Cell Content"],
-          ]}
+          bordered
+          hovered
+          headers={headers}
+          rows={rows}
         />
       </Wrapper>
+      <TextHeading
+        className="bg-color-dark color-light-0"
+        asTag="h1"
+        text="All page bg"
+      />
+      <Button btnLabel="Show full page bg" onClick={()=>{setShowFPBG(!showFPBG)}}/>
+      <FullPageBackground show={showFPBG}>
+        <Wrapper style={{top:'50%'}}>
+          <Table
+            bordered
+            hovered
+            headers={headers}
+            rows={rows}
+          />
+        </Wrapper>
+      </FullPageBackground>
     </>
   );
 };

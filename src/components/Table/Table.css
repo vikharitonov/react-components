@@ -6,7 +6,7 @@ table,
   border-spacing: 0;
   text-align: left;
   white-space: nowrap;
-  width: 100%;
+  background-color: var(--color-light-0);
 }
 
 table.sticky-header th,
