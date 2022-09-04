@@ -26,49 +26,49 @@ const TextHeading = ({
   switch (asTag) {
     case "h1":
       return (
-        <h1  {...props} className={className}>
+        <h1  {...props} className={`h1 ${className ? className : ''}`}>
           {text}
           {children}
         </h1>
       );
     case "h2":
       return (
-        <h2  {...props} className={className}>
+        <h2  {...props} className={`h2 ${className ? className : ''}`}>
           {text}
           {children}
         </h2>
       );
     case "h3":
       return (
-        <h3  {...props} className={className}>
+        <h3  {...props} className={`h3 ${className ? className : ''}`}>
           {text}
           {children}
         </h3>
       );
     case "h4":
       return (
-        <h4  {...props} className={className}>
+        <h4  {...props} className={`h4 ${className ? className : ''}`}>
           {text}
           {children}
         </h4>
       );
     case "h5":
       return (
-        <h5  {...props} className={className}>
+        <h5  {...props} className={`h5 ${className ? className : ''}`}>
           {text}
           {children}
         </h5>
       );
     case "h6":
       return (
-        <h6  {...props} className={className}>
+        <h6  {...props} className={`h6 ${className ? className : ''}`}>
           {text}
           {children}
         </h6>
       );
     default:
       return (
-        <h1  {...props} className={className}>
+        <h1  {...props} className={`h1 ${className ? className : ''}`}>
           {text}
           {children}
         </h1>

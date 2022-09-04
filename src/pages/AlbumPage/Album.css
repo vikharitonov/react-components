@@ -1,0 +1,54 @@
+main{
+  background-color: var(--color-light-3);
+  min-width: 100%;
+}
+header.header.main{
+  background-color: var(--color-dark);
+  color: var(--color-light);
+}
+.container {
+  overflow: hidden;
+  transition: max-height .32s ease-out;
+  max-height: 210px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.container.collapsed {
+  max-height: 0;
+}
+
+.container.expanded {
+  max-height: 210px;
+}
+
+.container.expanded .contacts,
+.container.collapsed .contacts{
+  justify-self: center;
+}
+
+.container.uncollapsed .btn-menu{
+  justify-self: end;
+}
+
+
+.action-section{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-light-0);
+}
+.action-call{
+  display: flex;
+  gap: 2em;
+}
+
+.album-examples{
+  max-width: 1320px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2em;
+  padding: 1em;
+}

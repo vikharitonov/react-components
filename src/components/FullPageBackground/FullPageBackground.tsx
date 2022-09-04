@@ -1,8 +1,8 @@
-import React, { ComponentPropsWithRef, useState } from "react";
+import React, { ComponentPropsWithoutRef } from "react";
 
 import "./FullPageBackground.css";
 
-interface FullPageBackgroundInterface extends ComponentPropsWithRef<"div"> {
+interface FullPageBackgroundInterface extends ComponentPropsWithoutRef<"div"> {
   show?: boolean
 }
 
@@ -14,7 +14,7 @@ const FullPageBackground = ({
 //TODO: rewrite to use context.
   if (show){
     return (
-      <div className="full-page-bg" {...props} onClick={()=>{}}>
+      <div className="full-page-bg" {...props}>
         {children}
       </div>
     );

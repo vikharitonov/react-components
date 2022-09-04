@@ -6,22 +6,32 @@ import { TextHeading } from "../../components/Text";
 import placeholder from "../../assets/imgs/plasceholders/placeholder.webp";
 import Table from "../../components/Table/Table";
 import FullPageBackground from "../../components/FullPageBackground/FullPageBackground";
+import Card from "../../components/Card/Card";
 
-const headers = [
-  "Table Header One",
-  "Table Header Two",
-  "Table Header Three",
-];
+import "./Header.css";
+import "./Navigation.css";
+import { useNavigate } from "react-router-dom";
+
+const headers = ["Table Header One", "Table Header Two", "Table Header Three"];
 const rows = [
   ["Table Cell Content", "Table Cell Content", "Table Cell Content"],
   ["Table Cell Content", "Table Cell Content", "Table Cell Content"],
   ["Table Cell Content", "Table Cell Content", "Table Cell Content"],
   ["Table Cell Content", "Table Cell Content", "Table Cell Content"],
-]
+];
 
 interface WrapperInterface extends ComponentPropsWithoutRef<"div"> {}
 const Wrapper = ({ children, ...props }: WrapperInterface) => {
-  return <div style={{ width: "50%", margin: "0 auto" }} {...props}>{children}</div>;
+  const style = {
+    ...{},
+    ...{ width: "50%", margin: "0 auto" },
+    ...props.style,
+  };
+  return (
+    <div {...props} style={style}>
+      {children}
+    </div>
+  );
 };
 
 const HomePage = () => {
@@ -29,9 +39,36 @@ const HomePage = () => {
     alert(`It's alive!!!`);
   };
   const [showFPBG, setShowFPBG] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <>
+      <header className="bg-color-light-2">
+        <nav className="nav main">
+          <ul>
+            <li>
+              <Button btnSize={"sm"} btnStyle={"primary"} btnLabel="Album" onClick={()=>{navigate('album')}} />
+            </li>
+          </ul>
+        </nav>
+      </header>
+      {/* <FullPageBackground show={showFPBG}>
+        {" "}
+        <Card
+          width={400}
+          cardHeading="Card heading"
+          cardText="Some text for card text field."
+          cardDirection="columns"
+          cardControls={
+            <Button
+              btnLabel="Close"
+              onClick={() => {
+                setShowFPBG(!showFPBG);
+              }}
+            />
+          }
+        />
+      </FullPageBackground>
       <TextHeading
         className="bg-color-dark color-light-0"
         asTag="h1"
@@ -102,29 +139,31 @@ const HomePage = () => {
       />
 
       <Wrapper>
-        <Table
-          bordered
-          hovered
-          headers={headers}
-          rows={rows}
-        />
+        <Table bordered hovered headers={headers} rows={rows} />
       </Wrapper>
       <TextHeading
         className="bg-color-dark color-light-0"
         asTag="h1"
         text="All page bg"
       />
-      <Button btnLabel="Show full page bg" onClick={()=>{setShowFPBG(!showFPBG)}}/>
-      <FullPageBackground show={showFPBG}>
-        <Wrapper style={{top:'50%'}}>
-          <Table
-            bordered
-            hovered
-            headers={headers}
-            rows={rows}
-          />
-        </Wrapper>
-      </FullPageBackground>
+      <Button
+        btnLabel="Show full page bg"
+        onClick={() => {
+          setShowFPBG(!showFPBG);
+        }}
+      />
+      <TextHeading
+        className="bg-color-dark color-light-0"
+        asTag="h1"
+        text="Card"
+      />
+      <Wrapper>
+        <Card
+          width={400}
+          cardHeading="Card heading"
+          cardText="Some text for card text field."
+        />
+      </Wrapper> */}
     </>
   );
 };

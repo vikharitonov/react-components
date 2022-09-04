@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import AlbumPage from '../pages/AlbumPage/AlbumPage';
 import HomePage from '../pages/HomePage/HomePage';
 
 
@@ -11,6 +12,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<HomePage/>}/>
+        <Route path='/album' element={<AlbumPage/>}/>
       </Routes>
     </BrowserRouter>
   </>

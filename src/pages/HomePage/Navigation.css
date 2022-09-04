@@ -1,0 +1,10 @@
+nav.main>ul, 
+.nav.main>ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
