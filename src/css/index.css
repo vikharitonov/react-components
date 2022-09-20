@@ -1,6 +1,7 @@
 @import url('./variables/spacing.css');
 @import url('./variables/radius.css');
 @import url('./variables/color.css');
+@import './variables/colors/index.css';
 @import url('./variables/shadow.css');
 @import url('./variables/font.css');
 

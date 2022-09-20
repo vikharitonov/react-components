@@ -110,6 +110,16 @@
   --color-invisible-0: #ffffff00;
   --color-invisible-text: #ffffff00;
 
+  --accent-900: #003333;
+  --accent-800: #006666;
+  --accent-700: #009999;
+  --accent-600: #00cccc;
+  --accent-500: #00ffff;
+  --accent-400: #32ffff;
+  --accent-300: #66ffff;
+  --accent-200: #99ffff;
+  --accent-100: #ccffff;
+
   --color-accent-9: #992277;
   --color-accent-8: #9d267b;
   --color-accent-7: #a0297f;

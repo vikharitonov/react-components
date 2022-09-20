@@ -160,16 +160,16 @@
 
 /* accent btn */
 .btn.accent {
-    border: 1px solid var(--color-accent-6);
-    background-color: var(--color-accent);
-    color: var(--color-accent-text);
+    border: 1px solid var(--accent-600);
+    background-color: var(--accent-500);
+    color: var(--accent-text);
   }
   
   .btn.accent:hover,
   .btn.accent:focus {
-    background-color: var(--color-accent-3);
+    background-color: var(--accent-300);
   }
   .btn.accent:active {
-    background-color: var(--color-accent-2);
+    background-color: var(--accent-200);
   }
   

@@ -49,10 +49,13 @@ const HomePage = () => {
             <li>
               <Button btnSize={"sm"} btnStyle={"primary"} btnLabel="Album" onClick={()=>{navigate('album')}} />
             </li>
+            <li>
+              <Button btnSize={"sm"} btnStyle={"primary"} btnLabel="Documentation" onClick={()=>{navigate('documentation')}} />
+            </li>
           </ul>
         </nav>
       </header>
-      {/* <FullPageBackground show={showFPBG}>
+      <FullPageBackground show={showFPBG}>
         {" "}
         <Card
           width={400}
@@ -163,7 +166,7 @@ const HomePage = () => {
           cardHeading="Card heading"
           cardText="Some text for card text field."
         />
-      </Wrapper> */}
+      </Wrapper>
     </>
   );
 };
